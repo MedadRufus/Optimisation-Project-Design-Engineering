@@ -28,7 +28,6 @@ points_coordinate = [[0.181,14.9],
                      [24.5,18.1],
                      [26.3,9.85]]
 
-
 matrix = spatial.distance.cdist(points_coordinate, points_coordinate, metric='euclidean')
 
 n = len(matrix)
@@ -40,7 +39,6 @@ def main():
     for x in range(1, n):
         g[x + 1, ()] = matrix[x][0]
 
-    #get_minimum(1, (2,3,4,5,6,7,8,9,10))
     get_minimum(1, range(2,n+1))
 
     print('\n\nSolution to TSP: {1, ', end='')
