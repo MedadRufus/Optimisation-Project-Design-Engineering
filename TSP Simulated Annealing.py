@@ -7,11 +7,10 @@ import sys
 
 #file_name = sys.argv[1] if len(sys.argv) > 1 else 'data/nctu.csv'
 #points_coordinate = np.loadtxt(file_name, delimiter=',')
-num_points = 15
+num_points = 16
 
 
-points_coordinate = np.array(
-                    [[0.181,14.9],
+points_coordinate = np.array([[0.181,14.9],
                      [9.06,9.40],
                      [9.38,29.6],
                      [10.0,9.77],
@@ -25,8 +24,9 @@ points_coordinate = np.array(
                      [21.6,10.8],
                      [24.1,17.3],
                      [24.5,18.1],
-                     [26.3,9.85]])
-
+                     [26.3,9.85],
+                    [0,0]
+                              ])
 
 distance_matrix = spatial.distance.cdist(points_coordinate, points_coordinate, metric='euclidean')
 distance_matrix = distance_matrix  # 1 degree of lat/lon ~ = 111000m
@@ -43,7 +43,7 @@ def cal_total_distance(routine):
 # %%
 from sko.SA import SA_TSP
 
-sa_tsp = SA_TSP(func=cal_total_distance, x0=range(num_points), T_max=100, T_min=1, L=10 * num_points)
+sa_tsp = SA_TSP(func=cal_total_distance, x0=range(num_points), T_max=100, T_min=1, L=1000 * num_points)
 
 best_points, best_distance = sa_tsp.run()
 print(best_points, best_distance, cal_total_distance(best_points))

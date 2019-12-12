@@ -4,7 +4,7 @@ import numpy as np
 from scipy import spatial
 import matplotlib.pyplot as plt
 
-num_points = 15
+num_points = 16
 seed = 10
 np.random.seed(seed = None)
 
@@ -26,7 +26,9 @@ points_coordinate = np.array([[0.181,14.9],
                      [21.6,10.8],
                      [24.1,17.3],
                      [24.5,18.1],
-                     [26.3,9.85]])
+                     [26.3,9.85],
+                    [0,0]
+                              ])
 print(points_coordinate)
 
 
