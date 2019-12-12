@@ -12,7 +12,8 @@ np.random.seed(seed = None)
 points_coordinate = np.random.rand(num_points, 2)  # generate coordinate of points
 print(points_coordinate)
 
-points_coordinate = np.array([[0.181,14.9],
+points_coordinate = np.array(
+                    [[0.181,14.9],
                      [9.06,9.40],
                      [9.38,29.6],
                      [10.0,9.77],
@@ -27,7 +28,7 @@ points_coordinate = np.array([[0.181,14.9],
                      [24.1,17.3],
                      [24.5,18.1],
                      [26.3,9.85],
-                    [0,0]
+                     [0,0]
                               ])
 print(points_coordinate)
 
